@@ -1,35 +1,47 @@
-import { Container, Flex, Input, Image } from "@chakra-ui/react"
+"use client";
+
+import React from "react"
+import Logo from "../../app/assets/images/Musslle-Perfil.png"
+import "./styles.css"
+import Image from "next/image"
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
-  return (
-    <Container>
-      <Flex
-        gap="4"
-        justify="center"
-        marginTop={300}
-        marginInline={"auto"}
-        direction="column"
-        columnGap={5}
-        maxW={400}
-      >
-        <Flex marginInline={"auto"} justify="center">
-          <Image
-            src="https://bit.ly/naruto-sage"
-            boxSize="150px"
-            borderRadius="full"
-            fit="cover"
-            alt="Naruto Uzumaki"
-            w={'fit-content'}
-          />
-        </Flex>
-        <h1>Login</h1>
-        <label>User</label>
-        <Input placeholder="Outline" variant="outline" />
+  const router = useRouter()
 
-        <label>Password</label>
-        <Input placeholder="Outline" variant="outline" type="password" />
-      </Flex>
-    </Container>
+  //login validation 
+  function handleLogin(event: React.FormEvent) {
+    event.preventDefault()
+    const form = event.target as HTMLFormElement
+    const username = form.username.value
+    const password = form.password.value
+
+    if (username === "admin" && password === "admin") {
+      router.push('/')
+    } else {
+      alert("Invalid username or password")
+    }
+  }
+
+  return (
+    <div className="loginMainContainer">
+      <div className="loginContent">
+        <Image className="loginLogo" src={Logo} alt="logo Musslle Perfil" />
+        <h2 className="loginTitle">Login</h2>
+
+        <form className="formLogin" onSubmit={handleLogin}>
+          <div className="formLoginContent">
+            <label className="labelFormLogin" htmlFor="username">Username:</label>
+            <input className="inputFormLogin" type="text" id="username" name="username" required />
+
+            <label className="labelFormLogin" htmlFor="password">Password:</label>
+            <input className="inputFormLogin" type="password" id="password" name="password" required />
+
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
   )
 }
 

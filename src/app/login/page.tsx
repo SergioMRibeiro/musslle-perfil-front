@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react"
-import Logo from "../../app/assets/images/Musslle-Perfil.png"
+import Logo from "../assets/images/Musslle-Perfil-removebg-preview.png"
 import "./styles.css"
 import Image from "next/image"
 import { useRouter } from 'next/navigation'

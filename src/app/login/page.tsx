@@ -5,21 +5,40 @@ import Logo from "../assets/images/Musslle-Perfil-removebg-preview.png"
 import "./styles.css"
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
+import { fetchFromMussllePerfilApi } from "../helpers/api";
 
 const Login = () => {
   const router = useRouter()
 
   //login validation 
-  function handleLogin(event: React.FormEvent) {
+  async function handleLogin(event: React.FormEvent) {
     event.preventDefault()
     const form = event.target as HTMLFormElement
     const username = form.username.value
     const password = form.password.value
 
-    if (username === "admin" && password === "admin") {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      "username": username,
+      "password": password
+    });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow' as RequestRedirect
+    };
+
+    try {
+      const response = await fetchFromMussllePerfilApi("/login", requestOptions);
+      const result = await response.text();
+      console.log(result);
       router.push('/')
-    } else {
-      alert("Invalid username or password")
+    } catch (error) {
+      console.error("Usuário ou senha inválidos", error);
     }
   }
 

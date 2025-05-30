@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "env-cmd -f .env.prod next dev",
+    "dev:local": "env-cmd -f .env.local next dev",
+    "build:prod": "env-cmd -f .env.prod next build",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -21,6 +23,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "env-cmd": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
     "typescript": "^5"

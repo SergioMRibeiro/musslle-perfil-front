@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react"
-import Logo from "../assets/images/Musslle-Perfil-removebg-preview.png"
-import "./styles.css"
+import Logo from "../../assets/images/Musslle-Perfil-removebg-preview.png"
+import styles from "./login.module.css"
 import Image from "next/image"
 import { useRouter } from 'next/navigation'
-import { fetchFromMussllePerfilApi } from "../helpers/api";
+import { fetchFromMussllePerfilApi } from "../../helpers/api";
 
 const Login = () => {
   const router = useRouter()
@@ -43,18 +43,18 @@ const Login = () => {
   }
 
   return (
-    <div className="loginMainContainer">
-      <div className="loginContent">
-        <Image className="loginLogo" src={Logo} alt="logo Musslle Perfil" />
-        <h2 className="loginTitle">Login</h2>
+    <div className={styles.loginMainContainer}>
+      <div className={styles.loginContent}>
+        <Image className={styles.loginLogo} src={Logo} alt="logo Musslle Perfil" />
+        <h2 className={styles.loginTitle}>Login</h2>
 
-        <form className="formLogin" onSubmit={handleLogin}>
-          <div className="formLoginContent">
-            <label className="labelFormLogin" htmlFor="username">Username:</label>
-            <input className="inputFormLogin" type="text" id="username" name="username" required />
+        <form className={styles.formLogin} onSubmit={handleLogin}>
+          <div className={styles.formLoginContent}>
+            <label className={styles.labelFormLogin} htmlFor="username">Username:</label>
+            <input className={styles.inputFormLogin} type="text" id="username" name="username" required />
 
-            <label className="labelFormLogin" htmlFor="password">Password:</label>
-            <input className="inputFormLogin" type="password" id="password" name="password" required />
+            <label className={styles.labelFormLogin} htmlFor="password">Password:</label>
+            <input className={styles.inputFormLogin} type="password" id="password" name="password" required />
 
             <button type="submit">Submit</button>
           </div>

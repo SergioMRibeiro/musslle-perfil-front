@@ -1,10 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { fetchFromMussllePerfilApi } from "./helpers/api"
+import { fetchFromMussllePerfilApi } from "../helpers/api"
 import styles from "./page.module.css"
-import { User } from "./helpers/interfaces"
-import TechnicalSheetCard from "./components/TechnicalSheetCard/intex"
+import { User } from "../helpers/interfaces"
+import TechnicalSheetCard from "../components/TechnicalSheetCard"
 
 export default function Home() {
   const [myProfile, setMyProfile] = useState<User>()
@@ -41,7 +41,9 @@ export default function Home() {
       <div className={styles.technicalSheetsContainer}>
         {technicalSheets?.map((sheet) => (
           <div key={sheet.id} className={styles.technicalSheetCard}>
+            <a href={`/exercise/${sheet.id}`}>
             <TechnicalSheetCard title={sheet.name} />
+            </a>
           </div>
         ))}
       </div>

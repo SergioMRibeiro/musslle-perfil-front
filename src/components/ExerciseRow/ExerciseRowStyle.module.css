@@ -1,0 +1,29 @@
+.exerciseRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  width: 100%;
+  margin-bottom: 24px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  border-radius: 16px;
+  border: 2px solid #e0e0e0;
+  background-color: #272727;
+}
+
+.exerciseRow:hover {
+  border-color: #bdbdbd;
+  background-color: #191919;
+  cursor: pointer;
+}
+
+.exerciseName{
+  text-align: left;
+  width: 120px;
+}
+.exerciseExerciseValue{}
+.exerciseSeries{}

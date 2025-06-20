@@ -8,8 +8,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background-color: #272727;
 }
 
 .technicalSheetCard:hover {
   border-color: #bdbdbd;
+  background-color: #191919;
+  cursor: pointer;
 }

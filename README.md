@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Musslle Perfil Frontend
 
-## Getting Started
+Projeto MVP para gerenciamento de treinos em academia ou em casa. Permite ao usuário criar sua própria ficha de treino ou solicitar que um treinador (admin) crie a ficha. Desenvolvido para fins de estudo, aplicando tecnologias e estruturas de aplicações reais, com foco em escalabilidade.
 
-First, run the development server:
+## Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Scripts Disponíveis](#scripts-disponíveis)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Conexão com Backend](#conexão-com-backend)
+- [Funcionalidades](#funcionalidades)
+- [Roadmap](#roadmap)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+- [Contato](#contato)
+
+## Sobre o Projeto
+
+Este projeto tem como objetivo facilitar o gerenciamento de treinos, permitindo flexibilidade para usuários e treinadores. O backend foi desenvolvido em Java, utilizando MySQL como banco de dados.
+
+## Tecnologias Utilizadas
+
+- **Node.js**: 22.14.0
+- **Next.js**: 15.4.1
+- **React**: 19.1.0
+- **TypeScript**
+- **Sass**
+- **Java (Backend)**
+- **JWT (Backend)**
+- **MySQL (Banco de Dados)**
+
+## Pré-requisitos
+
+- Node.js >= 22.14.0
+- npm ou yarn
+- Backend rodando (Java + MySQL)
+
+## Instalação
 
 ```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/musslle-perfil-front.git
+cd musslle-perfil-front
+
+# Instale as dependências
+npm install
+
+# Inicie o projeto em modo desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts Disponíveis
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `npm run dev`: Inicia o servidor de desenvolvimento Next.js
+- `npm run build`: Gera a build de produção
+- `npm start`: Inicia o servidor em produção
+- `npm run lint`: Executa o linter
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estrutura do Projeto
 
-## Learn More
+```
+musslle-perfil-front/
+├── public/
+│   ├── icons/
+│   └── images/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   │   └── app/
+│   │       ├── exercises/
+│   │       ├── home/
+│   │       └── login/
+│   ├── services/
+│   └── utils/
+├── package.json
+└── README.md
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Conexão com Backend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A comunicação com o backend Java será feita via API REST. Certifique-se de que o backend está rodando e acessível.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **URL do backend:** _[Adicionar URL aqui]_
+- **Endpoints principais:** _[Adicionar endpoints aqui]_
 
-## Deploy on Vercel
+## Funcionalidades
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [x] Cadastro de usuário
+- [x] Login
+- [x] Criação de ficha de treino
+- [ ] Acesso de treinador/admin
+- [ ] Edição de ficha
+- [ ] Histórico de treinos
+- [ ] Integração com backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Roadmap
+
+- [ ] Implementar autenticação JWT
+- [ ] Criar dashboard do usuário
+- [ ] Permitir anexar imagens aos treinos
+- [ ] Melhorar responsividade
+- [ ] Testes automatizados
+
+## Contribuição
+
+Sinta-se à vontade para abrir issues e pull requests. Veja o arquivo [CONTRIBUTING.md](CONTRIBUTING.md) para mais detalhes.
+
+## Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Contato
+
+- Email: _[Seu email aqui]_
+- LinkedIn: _[Seu LinkedIn aqui]_
+
+---
+
+> _Este projeto é apenas para fins de estudo, mas segue boas práticas e estrutura para fácil escalabilidade._
